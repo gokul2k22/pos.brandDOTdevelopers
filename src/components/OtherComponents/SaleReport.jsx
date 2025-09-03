@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getSalesData } from "../services/api";
 // import { exportToExcel } from "../utils/export";
 import { format } from "date-fns";
-import "./salesReport.css";
+import "./SalesReport.css";
 
 const SaleReport = () => {
   const [sales, setSales] = useState([]);
