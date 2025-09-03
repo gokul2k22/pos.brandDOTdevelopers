@@ -1,0 +1,110 @@
+/* ===== Base Styles ===== */
+.customers-container {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  /* min-height: 100vh; */
+}
+
+.customers-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* ===== Table Styles - Desktop View ===== */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Vertical scrollbar for desktop */
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+  white-space: nowrap; /* Prevents cell content from wrapping on desktop */
+}
+
+.customers-table th {
+  background-color: #3498db;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.customers-table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.loading-message,
+.no-data-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Custom scrollbar styles */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #e9ecef;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #bdc3c7;
+  border-radius: 4px;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+  .customers-container {
+    padding: 10px;
+  }
+
+  .customers-title {
+    font-size: 1.5rem;
+  }
+
+  /* Show both horizontal and vertical scrollbars for table on mobile */
+  .table-container {
+    max-height: 60vh;
+    overflow: auto; /* Enables both horizontal and vertical scrolling */
+  }
+
+  /* Table styling for mobile */
+  .customers-table {
+    min-width: 500px; /* Ensures the table overflows horizontally for scrolling */
+  }
+}

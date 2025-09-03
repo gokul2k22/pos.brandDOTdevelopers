@@ -1,0 +1,55 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: all 0.3s ease;
+  margin-left: 0;
+  width: 100%;
+}
+
+/* For mobile, we need to add padding to prevent content from being hidden behind toggle button */
+@media (max-width: 767.98px) {
+  .main-content {
+    padding-top: 70px;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+}
+
+/* Page content styling */
+.page-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 40px); /* Adjust based on your padding */
+}
+
+.page-title {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+}

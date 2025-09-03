@@ -1,0 +1,345 @@
+/* ===== BASE STYLES ===== */
+.sales-history {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* ===== BUTTONS & CONTROLS ===== */
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #6c757d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+}
+
+.btn.active {
+  background-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== SALES SUMMARY ===== */
+.sales-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.sales-summary p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6c757d;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sales-summary strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ===== SEARCH & FILTERS ===== */
+.search-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: end;
+}
+
+.input,
+.select-filter {
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select-filter:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.date-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.date-sales-count {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.clear-btn {
+  background-color: #dc3545;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.clear-btn:hover {
+  background-color: #c82333;
+}
+
+/* ===== TABLE STYLES - DESKTOP ===== */
+.table-container-wrapper {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  /* Updated for vertical scrolling on desktop */
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  /* Removed min-width to prevent horizontal scrollbar on desktop */
+}
+
+.sales-table th,
+.sales-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+  /* Allow text to wrap to fit container */
+  white-space: normal;
+}
+
+.sales-table th {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1.25rem 1rem;
+}
+
+.sales-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.sales-table tr:last-child td {
+  border-bottom: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Custom scrollbar for desktop */
+.table-container-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.table-container-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.table-container-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+  .sales-history {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .button-group {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .button-group::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .button-group::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+  }
+
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .sales-summary {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .search-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Updated for both horizontal and vertical scrolling on mobile */
+  .table-container-wrapper {
+    border-radius: 0.5rem;
+    overflow: auto;
+    max-height: 60vh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sales-table {
+    min-width: 100%;
+    width: auto;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    padding: 0.75rem;
+    white-space: nowrap;
+  }
+
+  /* Custom scrollbar for mobile */
+  .table-container-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .table-container-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .table-container-wrapper::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  .table-container-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  .sales-table th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f8f9fa;
+  }
+}
+
+/* ===== EXTRA SMALL SCREENS ===== */
+@media (max-width: 480px) {
+  .sales-history {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== LOADING STATES ===== */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+.sales-table th:focus,
+.btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Ensure proper table layout */
+.sales-table {
+  border-spacing: 0;
+}
+
+.sales-table td {
+  vertical-align: middle;
+}
+
+/* Zebra striping for better readability */
+.sales-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.sales-table tbody tr:nth-child(even):hover {
+  background-color: #f0f0f0;
+}
