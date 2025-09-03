@@ -1,6 +1,6 @@
 import axios from "axios";
 import.meta.env.VITE_API_BASE;
-const API_BASE = "https://103.14.120.41:8000/api";
+const API_BASE = "http://103.14.120.41:8000/api";
 // const API_BASE = import.meta.env.VITE_API_BASE;
 export const getSalesData = async () => {
   try {
